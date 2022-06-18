@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>SSE</title>
+</head>
+<body>
+<div id="result"></div>
+
+<script>
+var source = new EventSource('http://127.0.0.1:3666/sse')
+source.onmessage = function (event) {
+    document.getElementById('result').innerHTML += event.data + '<br>'
+}
+</script>
+</body>
+</html>
